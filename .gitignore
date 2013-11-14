@@ -1,0 +1,8 @@
+composer.phar
+Config/database.php
+Plugin/*
+tmp/*
+Vendor/*
+webroot/files/*
+
+!empty
