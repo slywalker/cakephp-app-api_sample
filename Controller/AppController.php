@@ -28,4 +28,20 @@ class AppController extends Controller {
 
 	use CrudControllerTrait;
 
+	public $components = [
+		'Session',
+		'Security',
+		'RequestHandler',
+		'Paginator' => [
+			'paramType' => 'querystring'
+		],
+		'DebugKit.Toolbar' => [
+			'panels' => ['Crud.Crud']
+		],
+		'Crud.Crud' => [
+			'actions' => ['index'],
+			'listeners' => ['Api', 'ApiPagination', 'ApiTransformation']
+		]
+	];
+
 }
