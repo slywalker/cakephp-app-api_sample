@@ -1,5 +1,7 @@
 <?php
 App::uses('AppModel', 'Model');
+App::uses('Sanitize', 'Utility');
+
 /**
  * Geometry Model
  *
@@ -12,9 +14,10 @@ class Geometry extends AppModel {
 	];
 
 	public function conditionCenter($queryParams) {
-		if (empty($queryParams['lat']) || empty($queryParams['lng'])) {
-			return [];
-		}
+		$queryParams = Sanitize::clean($queryParams) + [
+			'lat' => null,
+			'lng' => null
+		];
 
 		if (!is_numeric($queryParams['lat']) || !is_numeric($queryParams['lng'])) {
 			return [];

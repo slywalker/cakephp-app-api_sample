@@ -30,7 +30,6 @@ class AppController extends Controller {
 
 	public $components = [
 		'Session',
-		'Security',
 		'RequestHandler',
 		'Paginator' => [
 			'paramType' => 'querystring'

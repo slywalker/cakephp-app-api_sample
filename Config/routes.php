@@ -12,8 +12,7 @@
  * @package       app.Config
  * @since         CakePHP(tm) v 0.2.9
  */
-	Router::setExtensions(['json', 'xml']);
-	Router::parseExtensions();
+	Router::parseExtensions('json', 'xml');
 
 /**
  * Here, we are connecting '/' (base path) to controller called 'Pages',
